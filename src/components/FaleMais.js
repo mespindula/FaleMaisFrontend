@@ -55,35 +55,39 @@ function FaleMais() {
     };
 
     return (
-        <div>
-            <fieldset>
-                <legend>
-                    <h2>Simule o plano desejado</h2>
-                </legend>
+        <div class="container">
+            <h2>Simule o plano desejado</h2>
 
-                <div>
-                    <select name="dddSource" id="dddSource" required onChange={handleInputChange} >
-                        <option value="0">DDD Origem</option>
-                        {ddds.map(ddd => (<option key={ddd.id} value={ddd.id}>{ddd.value}</option>))}
-                    </select>
-
-                    <select name="dddTarget" id="dddTarget" required onChange={handleInputChange} >
-                        <option value="0">DDD Destino</option>
-                        {ddds.map(ddd => (<option key={ddd.id} value={ddd.id}>{ddd.value}</option>))}
-                    </select>
-
-                    <input type="text" name="time" id="time" placeholder="Minutos" required onChange={handleInputChange} />
-
-                    <select name="plan" id="plan" required onChange={handleInputChange} >
-                        <option value="0">Plano Fale Mais</option>
-                        {plans.map(plan => (<option key={plan.id} value={plan.id}>{plan.value}</option>))}
-                    </select>
-
-                    <button onClick={handleFormSubmit}>Simular</button>
-                </div>
-            </fieldset>
+            <div class="input-box">
+                <select name="dddSource" id="dddSource" required onChange={handleInputChange} >
+                    <option value=""></option>
+                    {ddds.map(ddd => (<option key={ddd.id} value={ddd.id}>{ddd.value}</option>))}
+                </select>
+                <label>DDD Origem</label>
+            </div>
+            <div class="input-box">
+                <select name="dddTarget" id="dddTarget" required onChange={handleInputChange} >
+                    <option value=""></option>
+                    {ddds.map(ddd => (<option key={ddd.id} value={ddd.id}>{ddd.value}</option>))}
+                </select>
+                <label>DDD Destino</label>
+            </div>
+            <div class="input-box">
+                <input type="text" name="time" id="time" required onChange={handleInputChange} />
+                <label>Minutos</label>
+            </div>
+            <div class="input-box">
+                <select name="plan" id="plan" required onChange={handleInputChange} >
+                    <option value=""></option>
+                    {plans.map(plan => (<option key={plan.id} value={plan.id}>{plan.value}</option>))}
+                </select>
+                <label>Plano Fale Mais</label>
+            </div>
+            <div class="button-box">
+                <button onClick={handleFormSubmit}>Simular</button>
+            </div>
             {result ? (
-                <div>
+                <div class="result-box">
                     <div>
                         <label><strong>Com FaleMais: {result.valorFaleMais}</strong></label>
                     </div>
