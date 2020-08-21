@@ -11,4 +11,4 @@ front-end para a aplicação Fale Mais
     npm install axios
 
 # Run
-\FaleMaisFrontend npm start
+\FaleMaisFrontend> npm start
