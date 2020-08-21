@@ -38,15 +38,15 @@ function FaleMais() {
         setFaleMais({ ...faleMais, [name]: value });
     };
 
-    const handleFormSubmit = event => {console.log(faleMais)
+    const handleFormSubmit = event => {
+        setResult(null);
+
         FaleMaisDataService.getTariff(faleMais)
         .then(response => {
             console.log(response.data);
 
             if (!response.data.erro) {
                 setResult(response.data);
-            } else {
-                setResult(null);
             }
         })
         .catch(e => {
